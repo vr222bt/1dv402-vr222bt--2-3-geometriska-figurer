@@ -12,9 +12,9 @@ namespace Geometriska_figurer
         {
 
             Rectangle rekt = new Rectangle(20, 5);
-            Console.WriteLine(rekt.ToString());
 
-            rekt.Width = ReadDoubleGreaterThanZero("Ange längd:");
+            rekt.Width = ReadDoubleGreaterThanZero("Ange bredd:");
+            rekt.Length = ReadDoubleGreaterThanZero("Ange längd:");
             Console.WriteLine(rekt.ToString());
             
         }
@@ -43,7 +43,7 @@ namespace Geometriska_figurer
                 catch
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("FEL! {0} är inte i önskat format, du måste ange ett tal större än noll.", input);
+                    Console.WriteLine("'{0}' är av fel format! Ange ett flyttal", input);
                     Console.ResetColor();
                 } 
             }
