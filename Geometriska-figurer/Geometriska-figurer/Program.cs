@@ -10,6 +10,10 @@ namespace Geometriska_figurer
     {
         static void Main(string[] args)
         {
+
+            Rectangle rekt = new Rectangle(20, 5);
+            Console.WriteLine(rekt.Area);
+            Console.WriteLine(rekt.ToString());
         }
     }
 }

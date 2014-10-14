@@ -13,10 +13,14 @@ namespace Geometriska_figurer
         private double _length;
         private double _width;
 
-        //Properties
-        abstract public double Area
+        //Properties        
+        public double Width
         {
-            get { return Area; }
+            get { return _width; }
+            set 
+            {
+                _width = value;
+            }
         }
 
         public double Length
@@ -27,19 +31,18 @@ namespace Geometriska_figurer
                 _length = value;
             }
         }
-        abstract public double Perimeter
+
+        public abstract double Area
         {
-            get { return Perimeter; }
+            get;
         }
 
-        public double Width
+        public abstract double Perimeter
         {
-            get { return _width; }
-            set 
-            {
-                _width = value;
-            }
+            get;
         }
+
+
 
         //Methods
         protected Shape(double length, double width)

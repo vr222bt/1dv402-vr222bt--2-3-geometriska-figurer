@@ -10,15 +10,15 @@ namespace Geometriska_figurer
     {
         public override double Area
         {
-            get { throw new NotImplementedException(); }
+            get { return Math.PI * Width * Length; }
         }
 
         public override double Perimeter
         {
-            get { throw new NotImplementedException(); }
+            get { return Math.PI * Math.Sqrt(2 * Width * Width + 2 * Length * Length); }
         }
 
-        public Ellipse(double length, double width) : base(0.0 , 0.0)
+        public Ellipse(double length, double width) : base(length , width)
         {
 
         }

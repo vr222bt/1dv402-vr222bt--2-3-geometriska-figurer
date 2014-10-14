@@ -10,15 +10,15 @@ namespace Geometriska_figurer
     {
         public override double Area
         {
-            get { throw new NotImplementedException(); }
+            get { return  Length * Width; }
         }
 
         public override double Perimeter
         {
-            get { throw new NotImplementedException(); }
+            get { return 2 * Length + 2 * Width; }
         }
 
-        public Rectangle(double length, double width) : base(0.0 , 0.0)
+        public Rectangle(double length, double width) : base(length, width)
         {
 
         }
