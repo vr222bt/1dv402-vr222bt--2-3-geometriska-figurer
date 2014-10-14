@@ -12,7 +12,7 @@ namespace Geometriska_figurer
         {
 
             Rectangle rekt = new Rectangle(20, 5);
-
+            ViewMenu();
             rekt.Width = ReadDoubleGreaterThanZero("Ange bredd:");
             rekt.Length = ReadDoubleGreaterThanZero("Ange längd:");
             Console.WriteLine(rekt.ToString());
@@ -43,7 +43,7 @@ namespace Geometriska_figurer
                 catch
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("'{0}' är av fel format! Ange ett flyttal", input);
+                    Console.WriteLine("'{0}' är av fel format! Ange ett flyttal!", input);
                     Console.ResetColor();
                 } 
             }
@@ -51,7 +51,18 @@ namespace Geometriska_figurer
 
         private static void ViewMenu()
         {
-
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("-                           -");
+            Console.WriteLine("-    Geometriska Figurer    -");
+            Console.WriteLine("-                           -");
+            Console.WriteLine("-----------------------------");
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine("0. Avsluta");
+            Console.WriteLine("1. Rektangel");
+            Console.WriteLine("2. Ellips");
+            Console.WriteLine();
         }
 
         private static void ViewShapeDetail(Shape shape)
