@@ -21,5 +21,12 @@
       <FileName>Shape.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Geometriska_figurer.Program">
+    <Position X="7.75" Y="1.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
