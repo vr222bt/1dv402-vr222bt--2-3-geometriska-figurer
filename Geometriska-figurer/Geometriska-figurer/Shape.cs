@@ -18,6 +18,29 @@ namespace Geometriska_figurer
         {
             get { return Area; }
         }
+
+        public double Length
+        {
+            get { return _length; }
+            set
+            {
+                _length = Length;
+            }
+        }
+        public double Perimeter
+        {
+            get { return Perimeter; }
+        }
+
+        public double Width
+        {
+            get { return _width; }
+            set 
+            {
+                _width = Width;
+            }
+        }
+
  
     }
 }
