@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Geometriska_figurer
 {
-    class Shape
+    abstract class  Shape
     {
+
+        //Fields
+        private double _length;
+        private double _width;
+
+        //Properties
+        public double Area
+        {
+            get { return Area; }
+        }
+ 
     }
 }
