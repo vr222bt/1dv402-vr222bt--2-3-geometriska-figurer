@@ -13,7 +13,29 @@ namespace Geometriska_figurer
 
             Rectangle rekt = new Rectangle(20, 5);
             Console.WriteLine(rekt.ToString());
+
             
         }
+
+        private static double ReadDoubleGreaterThanZero(string prompt)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void ViewMenu()
+        {
+
+        }
+
+        private static void ViewShapeDetail(Shape shape)
+        {
+
+        }
+
+    /*  public static Shape CreateShape(ShapeType shapeType)
+        {
+            return null;
+        }
+        */
     }
 }

@@ -40,17 +40,9 @@ namespace Geometriska_figurer
             }
         }
 
-        public abstract double Area
-        {
-            get;
-        }
+        public abstract double Area{get;}
 
-        public abstract double Perimeter
-        {
-            get;
-        }
-
-
+        public abstract double Perimeter {get;}
 
         //Methods
         protected Shape(double length, double width)
@@ -59,7 +51,6 @@ namespace Geometriska_figurer
             Width = width;
         }
  
-
         public override string ToString()
         {
             return String.Format("Längd  :{0,9} \nBredd  :{1,9} \nArea   :{2,9} \nOmkrets:{3,9}", Length, Width, Area, Perimeter);
