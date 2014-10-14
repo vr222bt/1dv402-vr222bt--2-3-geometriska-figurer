@@ -19,6 +19,10 @@ namespace Geometriska_figurer
             get { return _width; }
             set 
             {
+                if (_width < 0)
+                {
+                    throw new ArgumentException();
+                }
                 _width = value;
             }
         }
@@ -28,6 +32,10 @@ namespace Geometriska_figurer
             get { return _length; }
             set
             {
+                if (_length < 0)
+                {
+                    throw new ArgumentException();
+                }
                 _length = value;
             }
         }
