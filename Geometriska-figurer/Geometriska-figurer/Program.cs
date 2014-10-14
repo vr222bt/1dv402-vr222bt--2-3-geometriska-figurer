@@ -10,11 +10,43 @@ namespace Geometriska_figurer
     {
         static void Main(string[] args)
         {
-            //Rectangle rekt = new Rectangle(20, 5);
-            //ViewMenu();
-            //rekt.Width = ReadDoubleGreaterThanZero("Ange bredd:");
-            //rekt.Length = ReadDoubleGreaterThanZero("Ange längd:");
-            //Console.WriteLine(rekt.ToString());
+            int index;
+
+            
+            do
+	        {
+                Console.Clear();
+                ViewMenu();
+                if (int.TryParse(Console.ReadLine(), out index) && (index >= 0) && (2 >= index))
+	            {
+                    switch (index)
+                    {
+                        case 0:
+                            return;
+                        case 1:
+                            CreateShape(ShapeType.Ellipse);
+                            break;
+                        case 2:
+                            CreateShape(ShapeType.Rectangle);
+                            break;
+
+                    }
+	            }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Du måste ange ett nummer mellan 0 och 2!");
+                    Console.ResetColor(); 
+                }
+
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine("\n Tryck tangent för att fortsätta ");
+                Console.ResetColor();
+                Console.CursorVisible = false;
+                Console.ReadKey(true);
+                Console.Clear();
+                Console.CursorVisible = true;
+	        } while (true);      
             
         }
 
@@ -46,22 +78,24 @@ namespace Geometriska_figurer
             Console.ResetColor();
             Console.WriteLine();
             Console.WriteLine("0. Avsluta");
-            Console.WriteLine("1. Rektangel");
-            Console.WriteLine("2. Ellips");
+            Console.WriteLine("1. Ellips");
+            Console.WriteLine("2. Rektangel");
             Console.WriteLine();
             Console.WriteLine("-----------------------------");
-            Console.WriteLine("Ange menyval [0-2]");
+            Console.WriteLine();
+            Console.Write("Ange menyval [0-2]:");
         }
 
         private static void ViewShapeDetail(Shape shape)
         {
             Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine();
             Console.WriteLine("-----------------------------");
-            Console.WriteLine("-                           -");
             Console.WriteLine("-          Detaljer         -");
-            Console.WriteLine("-                           -");
             Console.WriteLine("-----------------------------");
+            Console.WriteLine();
             Console.ResetColor();
+            Console.WriteLine(shape.ToString());
         }
 
         public static Shape CreateShape(ShapeType shapeType)
@@ -70,10 +104,12 @@ namespace Geometriska_figurer
             {
                 case ShapeType.Ellipse:
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine();
                     Console.WriteLine("-----------------------------");
                     Console.WriteLine("-           Ellips          -");
-                    Console.WriteLine("-----------------------------");
+                    Console.WriteLine("-----------------------------");                   
                     Console.ResetColor();
+                    Console.WriteLine();
                     Ellipse myEllipse = new Ellipse(ReadDoubleGreaterThanZero("Ange längd: "), ReadDoubleGreaterThanZero("Ange bredd: "));
                     ViewShapeDetail(myEllipse);
                     return myEllipse;
