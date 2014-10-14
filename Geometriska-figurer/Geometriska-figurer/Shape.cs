@@ -14,7 +14,7 @@ namespace Geometriska_figurer
         private double _width;
 
         //Properties
-        public double Area
+        abstract public double Area
         {
             get { return Area; }
         }
@@ -24,10 +24,10 @@ namespace Geometriska_figurer
             get { return _length; }
             set
             {
-                _length = Length;
+                _length = value;
             }
         }
-        public double Perimeter
+        abstract public double Perimeter
         {
             get { return Perimeter; }
         }
@@ -37,10 +37,21 @@ namespace Geometriska_figurer
             get { return _width; }
             set 
             {
-                _width = Width;
+                _width = value;
             }
         }
 
+        //Methods
+        protected Shape(double length, double width)
+        {
+            Length = length;
+            Width = width;
+        }
  
+
+        public override string ToString()
+        {
+            return String.Format("Till Sträng!");
+        }
     }
 }
