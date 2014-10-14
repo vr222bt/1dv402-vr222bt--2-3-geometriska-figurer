@@ -12,7 +12,7 @@ namespace Geometriska_figurer
         {
 
             Rectangle rekt = new Rectangle(20, 5);
-            Console.WriteLine(rekt.Perimeter);
+            Console.WriteLine(rekt.ToString());
             
         }
     }
