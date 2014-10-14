@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Geometriska_figurer
 {
+    public enum ShapeType { Ellipse, Rectangle, E };
+
+
     abstract class  Shape
     {
 
