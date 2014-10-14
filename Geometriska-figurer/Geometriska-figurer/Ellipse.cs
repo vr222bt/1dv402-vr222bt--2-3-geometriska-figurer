@@ -10,12 +10,12 @@ namespace Geometriska_figurer
     {
         public override double Area
         {
-            get { return Math.PI * (Width/2) * (Length/2); }
+            get { return Math.Round((Math.PI * (Width/2) * (Length/2)), 2); }
         }
 
         public override double Perimeter
         {
-            get { return Math.PI * Math.Sqrt(2 * (Width / 2) * (Width / 2) + 2 * (Length / 2) * (Length / 2)); }
+            get { return Math.Round(Math.PI * Math.Sqrt(2 * (Width / 2) * (Width / 2) + 2 * (Length / 2) * (Length / 2)), 2); }
         }
 
         public Ellipse(double length, double width) : base(length , width)
