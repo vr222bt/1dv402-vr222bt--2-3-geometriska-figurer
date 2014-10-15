@@ -11,14 +11,16 @@ namespace Geometriska_figurer
         static void Main(string[] args)
         {
             int index;
-
-            
+           
+            //loop som går tills man skriver in 0 i menyn
             do
 	        {
                 Console.Clear();
                 ViewMenu();
+                //If-sats som undersöker att det inmatade värdet stämmer med menualternativen
                 if (int.TryParse(Console.ReadLine(), out index) && (index >= 0) && (2 >= index))
 	            {
+                    //Switch sats som agerar som en meny
                     switch (index)
                     {
                         case 0:
@@ -38,7 +40,7 @@ namespace Geometriska_figurer
                     Console.WriteLine("Du måste ange ett nummer mellan 0 och 2!");
                     Console.ResetColor(); 
                 }
-
+                //Skriver ut ledtext och börjar om från början när en tangent trycks in
                 Console.BackgroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("\n Tryck tangent för att fortsätta ");
                 Console.ResetColor();
@@ -50,6 +52,7 @@ namespace Geometriska_figurer
             
         }
 
+        //Läser in värden samtidigt som det undersöks om det är ett godkänt värde och skriver ut en ledtext
         private static double ReadDoubleGreaterThanZero(string prompt)
         {
             double value;
@@ -66,7 +69,7 @@ namespace Geometriska_figurer
                 
             }
         }
-
+        
         private static void ViewMenu()
         {
             Console.BackgroundColor = ConsoleColor.DarkGreen;
@@ -98,6 +101,7 @@ namespace Geometriska_figurer
             Console.WriteLine(shape.ToString());
         }
 
+        //Skapar en Ellipse eller en Rektangel beroende på vilken som angavs i menyn och anropar ViewShaoeDetail
         public static Shape CreateShape(ShapeType shapeType)
         {
             switch (shapeType)
@@ -110,15 +114,17 @@ namespace Geometriska_figurer
                     Console.WriteLine("-----------------------------");                   
                     Console.ResetColor();
                     Console.WriteLine();
-                    Ellipse myEllipse = new Ellipse(ReadDoubleGreaterThanZero("Ange längd: "), ReadDoubleGreaterThanZero("Ange bredd: "));
+                    Ellipse myEllipse = new Ellipse(ReadDoubleGreaterThanZero("Ange längd:"), ReadDoubleGreaterThanZero("Ange bredd:"));
                     ViewShapeDetail(myEllipse);
                     return myEllipse;
 
                 case ShapeType.Rectangle:
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine();
                     Console.WriteLine("-----------------------------");
                     Console.WriteLine("-         Rektangel         -");
                     Console.WriteLine("-----------------------------");
+                    Console.WriteLine();
                     Console.ResetColor();
                     Rectangle myRectangle = new Rectangle(ReadDoubleGreaterThanZero("Ange längd:"), ReadDoubleGreaterThanZero("Ange bredd:"));
                     ViewShapeDetail(myRectangle);
