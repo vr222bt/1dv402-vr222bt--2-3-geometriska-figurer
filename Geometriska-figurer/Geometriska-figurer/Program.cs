@@ -11,7 +11,8 @@ namespace Geometriska_figurer
         static void Main(string[] args)
         {
             int index;
-           
+            ShapeType shapeType = ShapeType.E;
+
             //loop som går tills man skriver in 0 i menyn
             do
 	        {
@@ -26,13 +27,15 @@ namespace Geometriska_figurer
                         case 0:
                             return;
                         case 1:
-                            CreateShape(ShapeType.Ellipse);
+                            shapeType = ShapeType.Ellipse;
                             break;
                         case 2:
-                            CreateShape(ShapeType.Rectangle);
+                            shapeType = ShapeType.Rectangle;
                             break;
-
                     }
+
+                    Shape shape = CreateShape(shapeType);
+                    ViewShapeDetail(shape);
 	            }
                 else
                 {
@@ -42,7 +45,8 @@ namespace Geometriska_figurer
                 }
                 //Skriver ut ledtext och börjar om från början när en tangent trycks in
                 Console.BackgroundColor = ConsoleColor.DarkBlue;
-                Console.WriteLine("\n Tryck tangent för att fortsätta ");
+                Console.WriteLine();
+                Console.WriteLine("Tryck tangent för att fortsätta ");
                 Console.ResetColor();
                 Console.CursorVisible = false;
                 Console.ReadKey(true);
@@ -64,7 +68,7 @@ namespace Geometriska_figurer
                     return value;
                 }
                 Console.BackgroundColor = ConsoleColor.Red;
-                Console.WriteLine("Du måste ange ett flyttal större än 0!");
+                Console.WriteLine("Du måste ange ett tal större än 0!");
                 Console.ResetColor();
                 
             }
@@ -104,34 +108,37 @@ namespace Geometriska_figurer
         //Skapar en Ellipse eller en Rektangel beroende på vilken som angavs i menyn och anropar ViewShaoeDetail
         public static Shape CreateShape(ShapeType shapeType)
         {
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine();
+            Console.WriteLine("-----------------------------");
+
             switch (shapeType)
             {
                 case ShapeType.Ellipse:
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    Console.WriteLine();
-                    Console.WriteLine("-----------------------------");
                     Console.WriteLine("-           Ellips          -");
-                    Console.WriteLine("-----------------------------");                   
-                    Console.ResetColor();
-                    Console.WriteLine();
-                    Ellipse myEllipse = new Ellipse(ReadDoubleGreaterThanZero("Ange längd:"), ReadDoubleGreaterThanZero("Ange bredd:"));
-                    ViewShapeDetail(myEllipse);
-                    return myEllipse;
+                    break;
 
                 case ShapeType.Rectangle:
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    Console.WriteLine();
-                    Console.WriteLine("-----------------------------");
                     Console.WriteLine("-         Rektangel         -");
-                    Console.WriteLine("-----------------------------");
-                    Console.WriteLine();
-                    Console.ResetColor();
-                    Rectangle myRectangle = new Rectangle(ReadDoubleGreaterThanZero("Ange längd:"), ReadDoubleGreaterThanZero("Ange bredd:"));
-                    ViewShapeDetail(myRectangle);
-                    return myRectangle;
+                    break;
 
                 default:
                     throw new NotImplementedException();
+            }
+
+            Console.WriteLine("-----------------------------");
+            Console.ResetColor();
+            Console.WriteLine();
+            double length = ReadDoubleGreaterThanZero("Ange längd:");
+            double width = ReadDoubleGreaterThanZero("Ange bredd:");
+
+            if (shapeType == ShapeType.Ellipse)
+            {
+                return new Ellipse(length, width);
+            }
+            else
+            {
+                return new Rectangle(length, width);
             }
         }
         

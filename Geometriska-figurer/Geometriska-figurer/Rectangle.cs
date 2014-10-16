@@ -10,12 +10,12 @@ namespace Geometriska_figurer
     {
         public override double Area
         {
-            get { return  Math.Round(Length * Width, 2); }
+            get { return  (Length * Width); }
         }
 
         public override double Perimeter
         {
-            get { return Math.Round(2 * Length + 2 * Width, 2); }
+            get { return (2 * Length + 2 * Width); }
         }
 
         public Rectangle(double length, double width) : base(length, width)
