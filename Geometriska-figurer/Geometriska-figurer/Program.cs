@@ -13,10 +13,14 @@ namespace Geometriska_figurer
             int index;
             ShapeType shapeType = ShapeType.E;
 
+
+
+
             //loop som går tills man skriver in 0 i menyn
             do
 	        {
-                Console.Clear();
+
+                Console.Clear();              
                 ViewMenu();
                 //If-sats som undersöker att det inmatade värdet stämmer med menualternativen
                 if (int.TryParse(Console.ReadLine(), out index) && (index >= 0) && (2 >= index))
